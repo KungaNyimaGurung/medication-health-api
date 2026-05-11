@@ -16,7 +16,7 @@ const patientSchema = new mongoose.Schema(
     },
     phone: {
       type: String,
-      required: true,
+      required: false,
       trim: true,
     },
     password: {
