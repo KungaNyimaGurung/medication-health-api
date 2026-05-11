@@ -1,7 +1,7 @@
 import jwt from 'jsonwebtoken';
 import Patient from '../models/Patient.js';
 
-export const protect = async (req, res, next) => {
+const protect = async (req, res, next) => {
   let token;
 
   if (req.headers.authorization?.startsWith('Bearer')) {
@@ -10,7 +10,7 @@ export const protect = async (req, res, next) => {
 
       const decoded = jwt.verify(token, process.env.JWT_SECRET);
 
-      req.patient = await Patient.findById(decoded.id).select('-password');
+      req.user = await Patient.findById(decoded.id).select('-password');
 
       return next();
     } catch (error) {
@@ -20,3 +20,5 @@ export const protect = async (req, res, next) => {
 
   res.status(401).json({ message: 'Not authorized, no token' });
 };
+
+export default protect;

@@ -1,5 +1,6 @@
 import app from './app.js';
 import connectDB from './config/db.js';
+import './jobs/reminderJob.js';   // <-- Auto-reminder system enabled
 
 const PORT = process.env.PORT || 4000;
 
