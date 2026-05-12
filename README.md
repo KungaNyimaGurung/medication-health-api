@@ -141,8 +141,8 @@ Body:
 
 ```json
 {
-  "name": "Kunga",
-  "email": "kunganyima171@gmail.com",
+  "name": "Patient1",
+  "email": "patient1@gmail.com",
   "password": "goodluck123"
 }
 ```
@@ -157,7 +157,7 @@ Body:
 
 ```json
 {
-  "email": "kunganyima171@gmail.com",
+  "email": "patient1@gmail.com",
   "password": "goodluck123"
 }
 ```
@@ -238,7 +238,7 @@ Terminal output example:
 
 ```bash
 ⏰ Auto-reminder created for TestMed2 at 19:51
-📧 Email sent to kunganyima171@gmail.com
+📧 Email sent to patient1@gmail.com
 📨 Email reminder SENT for TestMed2
 ```
 
