@@ -1,6 +1,7 @@
 import express from 'express';
 import dotenv from 'dotenv';
 
+//importing the Routes]
 import patientRoutes from './routes/patientRoutes.js';
 import medicationRoutes from './routes/medicationRoutes.js';
 import healthLogRoutes from './routes/healthLogRoutes.js';
