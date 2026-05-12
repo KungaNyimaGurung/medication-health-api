@@ -186,8 +186,9 @@ Body:
 {
   "name": "TestMed",
   "dosage": "500mg",
-  "times": ["19:45"],
-  "startDate": "2026-05-11"
+  "frequency":1,
+  "times": "16:20",
+  "startDate": "2026-05-12"
 }
 ```
 
@@ -195,6 +196,33 @@ Body:
 
 ```http
 GET /api/medications
+```
+
+---
+
+### ⭐ HealthLogs Routes
+
+#### Create HealthLogs
+
+```http
+POST /api/healthLogs
+```
+
+Headers:
+
+```bash
+Authorization: Bearer <token>
+```
+
+Body:
+
+```json
+{
+  "symptoms": "Headache and slight dizziness",
+  "mood": "Tired",
+  "painLevel": 4,
+  "notes": "Took medication late today."
+}
 ```
 
 ---
