@@ -13,16 +13,60 @@ Real-world business logic
 
 ---
 
-Model Design:
+Patient Model Design:
 | Key       | Data Type | Description                 |
 | --------- | --------- | --------------------------- |
 | name      | String    | Patient full name           |
 | email     | String    | Patient email/login         |
-| phone     | String    | Patient contact number      |
+| phone     | String    | Patient contact number (optional)     |
 | password  | String    | Encrypted password          |
 | _id       | ObjectId  | Auto-generated MongoDB ID   |
 | createdAt | Date      | Document creation timestamp |
 | updatedAt | Date      | Last update timestamp       |
+
+
+
+Medication Model Design:
+
+| Key       | Data Type | Description                 |
+| --------- | --------- | --------------------------- |
+| patient   | ObjectId  | References Patient model    |
+| name      | String    | Medication name             |
+| dosage    | String    | Medication dosage           |
+| frequency | Number    | Times per day               |
+| times     | Array     | Reminder times              |
+| startDate | Date      | Medication start date       |
+| endDate   | Date      | Medication end date         |
+| notes     | String    | Extra instructions          |
+| isActive  | Boolean   | Active/inactive status      |
+| _id       | ObjectId  | Auto-generated MongoDB ID   |
+| createdAt | Date      | Document creation timestamp |
+| updatedAt | Date      | Last update timestamp       |
+
+
+HealthLog Model Design:
+| Key       | Data Type | Description                 |
+| --------- | --------- | --------------------------- |
+| patient   | ObjectId  | References Patient model    |
+| symptoms  | String    | Patient symptoms            |
+| mood      | String    | Patient mood status         |
+| painLevel | Number    | Pain level from 0–10        |
+| notes     | String    | Additional health notes     |
+| _id       | ObjectId  | Auto-generated MongoDB ID   |
+| createdAt | Date      | Document creation timestamp |
+| updatedAt | Date      | Last update timestamp       |
+
+
+Reminder Model Design:
+| Key        | Data Type | Description                                   |
+| ---------- | --------- | --------------------------------------------- |
+| patient    | ObjectId  | References Patient model                      |
+| medication | ObjectId  | References Medication model                   |
+| time       | Date      | Scheduled reminder time                       |
+| status     | String    | Reminder status (`pending`, `sent`, `missed`) |
+| _id        | ObjectId  | Auto-generated MongoDB ID                     |
+| createdAt  | Date      | Document creation timestamp                   |
+| updatedAt  | Date      | Last update timestamp                         |
 
 
 ## 📌 Table of Contents
