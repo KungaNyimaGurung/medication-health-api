@@ -18,7 +18,6 @@ Patient Model Design:
 | --------- | --------- | --------------------------- |
 | name      | String    | Patient full name           |
 | email     | String    | Patient email/login         |
-| phone     | String    | Patient contact number (optional)     |
 | password  | String    | Encrypted password          |
 | _id       | ObjectId  | Auto-generated MongoDB ID   |
 | createdAt | Date      | Document creation timestamp |
