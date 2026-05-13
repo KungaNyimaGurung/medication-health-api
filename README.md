@@ -279,6 +279,66 @@ Body:
 GET /api/medications
 ```
 
+#### Update Medication
+
+```http
+PUT /api/medications/:id
+```
+
+Headers:
+
+```bash
+Authorization: Bearer <token>
+```
+Example Endpoint:
+```bash
+PUT /api/medications/6823f4d9e2f4b6a1a92f1c21
+```
+
+Body:
+
+```json
+{
+  "name": "UpdatedMed",
+  "dosage": "750mg",
+  "frequency": 2,
+  "times": ["08:00", "20:00"],
+  "startDate": "2026-05-13"
+}
+```
+
+#### Delete Medication
+
+```http
+DELETE /api/medications/:id
+```
+
+Headers:
+
+```bash
+Authorization: Bearer <token>
+```
+Example Endpoint:
+```bash
+DELETE /api/medications/6823f4d9e2f4b6a1a92f1c2
+```
+
+Success Response:
+
+```json
+{
+  "message": "Medication deleted successfully"
+}
+```
+Error Response(404):
+
+```json
+{
+  "message": "Medication not found"
+}
+```
+
+
 ---
 
 ### ⭐ HealthLogs Routes
