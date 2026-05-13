@@ -1,33 +1,72 @@
 import express from 'express';
 import dotenv from 'dotenv';
 
-//importing the Routes]
+// Importing route modules
 import patientRoutes from './routes/patientRoutes.js';
 import medicationRoutes from './routes/medicationRoutes.js';
 import healthLogRoutes from './routes/healthLogRoutes.js';
 import reminderRoutes from './routes/reminderRoutes.js';
 
+// Load environment variables
 dotenv.config();
 
 const app = express();
 
+// Parse incoming JSON request bodies
 app.use(express.json());
 
-// Root route
+/**
+ * ROOT ROUTE
+ * ----------
+ * Simple health check endpoint.
+ * Confirms that the API is running.
+ */
 app.get('/', (req, res) => {
   res.json({ message: 'Medication & Health API is running' });
 });
 
-// Patient authentication routes
+/**
+ * PATIENT AUTH ROUTES
+ * -------------------
+ * Handles:
+ * - Registration
+ * - Login
+ * - Profile access
+ */
 app.use('/api/patients', patientRoutes);
 
-// Medication routes
+/**
+ * MEDICATION ROUTES
+ * -----------------
+ * Handles:
+ * - Create medication
+ * - Get all medications
+ * - Update medication
+ * - Delete medication
+ */
 app.use('/api/medications', medicationRoutes);
 
-// Health log routes
+/**
+ * HEALTH LOG ROUTES
+ * -----------------
+ * Handles:
+ * - Create health log
+ * - Get all logs
+ * - Get single log
+ * - Update log
+ * - Delete log
+ */
 app.use('/api/healthlogs', healthLogRoutes);
 
-// Reminder routes
+/**
+ * REMINDER ROUTES
+ * ---------------
+ * Handles:
+ * - Manual reminder creation
+ * - Get all reminders
+ * - Update reminder status
+ * - Get upcoming reminders
+ */
 app.use('/api/reminders', reminderRoutes);
 
 export default app;
