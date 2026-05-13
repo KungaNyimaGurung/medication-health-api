@@ -273,13 +273,13 @@ Body:
 }
 ```
 
-#### Get All Medications
+#### 💊 Get All Medications
 
 ```http
 GET /api/medications
 ```
 
-#### Update Medication
+#### 💊 Update Medication
 
 ```http
 PUT /api/medications/:id
@@ -307,7 +307,7 @@ Body:
 }
 ```
 
-#### Delete Medication
+#### 💊 Delete Medication
 
 ```http
 DELETE /api/medications/:id
