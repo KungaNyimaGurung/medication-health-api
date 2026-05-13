@@ -1,2 +1,0 @@
-💊 Medication & Health Reminder API
-A production‑ready RESTful API for managing medications, schedules, and automated reminders. Built with Node.js, Express, MongoDB Atlas, JWT authentication, and cron‑based background jobs for sending email/SMS reminders.
